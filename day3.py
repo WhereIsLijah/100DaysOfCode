@@ -1,4 +1,16 @@
-# Treasure Island
+"""
+File: day3.py
+
+Description:
+    This script is an interactive game called 'Treasure Island'.
+    The player makes choices to find the treasure. The game progresses based on
+    the player's choices and ends when the player wins or encounters a 'Game Over'.
+
+
+Author: WhereIsLijah
+Version: 1.0
+Date: 2024-01-08
+"""
 
 print("Welcome to Treasure Island, Your mission is to find the treasure")
 choice = input("Left or Right: \n").lower()
