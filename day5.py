@@ -13,8 +13,11 @@ import random as r
 import string
 
 def password_generator(no_letter, no_symbol, no_numbers):
-    if no_letter + no_symbol + no_numbers < 8 or no_letter < 4:
-        raise ValueError("Invalid parameters entered for password generation")
+    if no_letter + no_symbol + no_numbers < 8:
+        raise ValueError("Total number of characters should be at least 8 for security reasons.")
+
+    if no_letter < 1 or no_symbol < 1 or no_numbers < 1:
+        raise ValueError("Please include at least one letter, one symbol, and one number for a strong password.")
 
     password = (r.choices(string.ascii_letters, k = no_letter) +
                 r.choices(string.punctuation, k = no_symbol) +
@@ -25,10 +28,8 @@ def password_generator(no_letter, no_symbol, no_numbers):
     return ''.join(password)
 
 def main():
-
+    print("Welcome to the Password Generator\n")
     try:
-        print("Welcome to the Password Generator\n")
-
         no_letter = int(input("How many letters would you like in your password?\n"))
         no_symbol = int(input("How many symbols would you like?\n"))
         no_numbers = int(input("How many numbers would you like?\n"))
@@ -37,7 +38,7 @@ def main():
         print(generated_password)
 
     except ValueError as e:
-        print(f"Failed to generate password. Please check the input parameters: {e}")
+        print(f"Error: {e}")
 
 if __name__ == "__main__":
     main()
