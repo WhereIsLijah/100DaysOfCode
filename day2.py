@@ -29,8 +29,10 @@ def main():
         print(f"Each person should pay: ${amt_per_person:.1f}")
 
     except ValueError as e:
-        print(f"Invavlid input: {e}")
+        print(f"Invalid input: {e}")
 
 if __name__ == "__main__":
     main()
+
+
 
